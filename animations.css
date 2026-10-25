@@ -1,1 +1,84 @@
-body{overflow-x:hidden}.hero{background:linear-gradient(120deg,#f3f7ff,#fff,#f0fbf6);background-size:200% 200%;animation:ipfWash 12s ease infinite}.hero h1,.hero .lead,.hero .actions{animation:ipfUp .8s both}.hero .lead{animation-delay:.12s}.hero .actions{animation-delay:.22s}.circle{animation:ipfFloat 5s ease-in-out infinite;position:relative}.circle:after{content:'';position:absolute;inset:-20px;border:1px dashed #8eaff755;border-radius:50%;animation:ipfSpin 28s linear infinite}.shield{filter:drop-shadow(0 15px 18px #0b1f3a44);animation:ipfFloat 4s ease-in-out infinite}.float{animation:ipfFloat 5s ease-in-out infinite}.f2{animation-delay:-2s}.btn{transition:transform .25s,box-shadow .25s}.btn:hover{transform:translateY(-3px);box-shadow:0 13px 28px #1757d52a}.card,.step{transition:transform .28s,box-shadow .28s,border-color .28s}.card:hover,.step:hover{transform:translateY(-7px);box-shadow:0 22px 45px #10274714;border-color:#c8d8fa}.ico{transition:transform .3s}.card:hover .ico{transform:rotate(-8deg) scale(1.1)}.wa{animation:ipfPulse 3s ease-in-out infinite}.faq details{transition:background .25s,padding .25s;border-radius:12px;padding-left:12px;padding-right:12px}.faq details[open]{background:#f5f8ff;padding-top:20px;padding-bottom:20px}.cta{overflow:hidden;box-shadow:0 20px 50px #0b1f3a20}.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.in-view{opacity:1;transform:none}@keyframes ipfUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}@keyframes ipfWash{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}@keyframes ipfFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes ipfSpin{to{transform:rotate(360deg)}}@keyframes ipfPulse{0%,100%{box-shadow:0 12px 30px #0b8c4a44}50%{box-shadow:0 12px 30px #0b8c4a44,0 0 0 9px #20c66b00}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+/* IPF site-wide motion system — lightweight, responsive, accessible */
+:root{scroll-behavior:smooth;scroll-padding-top:88px}
+body{overflow-x:hidden}
+::selection{background:#cfe0ff;color:#0b1f3a}
+a,button,input,textarea,select,summary{-webkit-tap-highlight-color:transparent}
+header{transition:box-shadow .3s ease,background .3s ease}
+header:hover{box-shadow:0 8px 28px #0b1f3a0b}
+.brand{transition:transform .25s ease}
+.brand:hover{transform:translateY(-1px)}
+.logo-mark{animation:ipfLogoIn .8s cubic-bezier(.2,.8,.2,1) both}
+.links a{position:relative;transition:color .22s ease,transform .22s ease}
+.links a:after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:2px;border-radius:9px;background:var(--blue);transition:right .25s ease}
+.links a:hover{color:var(--blue);transform:translateY(-1px)}
+.links a:hover:after{right:0}
+.hero{background:linear-gradient(120deg,#f3f7ff,#fff,#f0fbf6);background-size:200% 200%;animation:ipfWash 12s ease infinite}
+.hero .pill{animation:ipfUp .65s both}
+.hero h1,.hero .lead,.hero .actions{animation:ipfUp .8s both}
+.hero h1{animation-delay:.06s}
+.hero .lead{animation-delay:.12s}
+.hero .actions{animation-delay:.22s}
+.hero .note{animation:ipfFade .9s .3s both}
+.green-dot{box-shadow:0 0 0 0 #1ca66a55;animation:ipfDot 2s infinite}
+.circle{animation:ipfFloat 5s ease-in-out infinite;position:relative}
+.circle:after{content:"";position:absolute;inset:-20px;border:1px dashed #8eaff755;border-radius:50%;animation:ipfSpin 28s linear infinite;pointer-events:none}
+.shield{filter:drop-shadow(0 15px 18px #0b1f3a44);animation:ipfFloat 4s ease-in-out infinite}
+.float{animation:ipfFloat 5s ease-in-out infinite}
+.f2{animation-delay:-2s}
+.btn{position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,background-color .25s}
+.btn:before{content:"";position:absolute;inset:0;transform:translateX(-120%);background:linear-gradient(100deg,transparent,#ffffff3b,transparent);transition:transform .55s ease;pointer-events:none}
+.btn:hover{transform:translateY(-3px);box-shadow:0 13px 28px #1757d52a}
+.btn:hover:before{transform:translateX(120%)}
+.btn:active{transform:translateY(0) scale(.98)}
+.card,.step{position:relative;transition:transform .28s,box-shadow .28s,border-color .28s}
+.card:hover,.step:hover{transform:translateY(-7px);box-shadow:0 22px 45px #10274714;border-color:#c8d8fa}
+.ico{transition:transform .3s,background .3s}
+.card:hover .ico{transform:rotate(-8deg) scale(1.1);background:#dfeaff}
+.card h3{transition:color .25s}
+.card:hover h3{color:var(--blue)}
+.num{display:inline-block;transition:transform .25s}
+.step:hover .num{transform:translateX(4px)}
+.kicker{display:inline-block;animation:ipfFade .8s both}
+.head h2{transition:letter-spacing .3s}
+.head:hover h2{letter-spacing:-.045em}
+.pale{background-image:linear-gradient(135deg,#f5f8fd 0%,#f9fbff 50%,#eff5ff 100%);background-size:200% 200%;animation:ipfPaleWash 18s ease infinite}
+.panel{position:relative;overflow:hidden}
+.panel:after{content:"";position:absolute;width:240px;height:240px;border:1px solid #ffffff12;border-radius:50%;right:-120px;top:-100px;box-shadow:0 0 0 25px #ffffff08,0 0 0 50px #ffffff05;pointer-events:none;transition:transform .7s}
+.panel:hover:after{transform:scale(1.12) rotate(12deg)}
+.item{transition:transform .25s}
+.item:hover{transform:translateX(4px)}
+.form{transition:box-shadow .3s,border-color .3s}
+.form:focus-within{border-color:#c4d6fb;box-shadow:0 18px 44px #1757d50e}
+.field input,.field textarea,.field select{transition:border-color .2s,box-shadow .2s,transform .2s}
+.field input:focus,.field textarea:focus,.field select:focus{transform:translateY(-1px)}
+.field label{transition:color .2s}
+.field:focus-within label{color:var(--blue)}
+.faq details{transition:background .25s,padding .25s,border-color .25s;border-radius:12px;padding-left:12px;padding-right:12px}
+.faq details[open]{background:#f5f8ff;padding-top:20px;padding-bottom:20px}
+.faq summary{transition:color .2s}
+.faq summary:hover{color:var(--blue)}
+.faq details p{animation:ipfFade .3s ease both}
+.cta{position:relative;overflow:hidden;box-shadow:0 20px 50px #0b1f3a20;transition:transform .3s,box-shadow .3s}
+.cta:after{content:"";position:absolute;top:-60%;left:-30%;width:35%;height:220%;transform:rotate(22deg);background:linear-gradient(90deg,transparent,#ffffff0b,transparent);animation:ipfShine 9s ease-in-out infinite;pointer-events:none}
+.cta:hover{transform:translateY(-3px);box-shadow:0 25px 60px #0b1f3a28}
+.disclaimer{transition:color .25s}
+.disclaimer:hover{color:#4d607c}
+.footlinks a{transition:color .2s,transform .2s;display:inline-block}
+.footlinks a:hover{color:var(--blue);transform:translateY(-2px)}
+footer .brand:hover{transform:translateY(-2px)}
+.wa{animation:ipfPulse 3s ease-in-out infinite;transition:transform .25s}
+.wa:hover{transform:translateY(-4px) scale(1.06);animation-play-state:paused}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in-view{opacity:1;transform:none}
+@keyframes ipfUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes ipfFade{from{opacity:0}to{opacity:1}}
+@keyframes ipfLogoIn{from{opacity:0;transform:scale(.8) rotate(-10deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes ipfWash{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@keyframes ipfPaleWash{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@keyframes ipfFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes ipfSpin{to{transform:rotate(360deg)}}
+@keyframes ipfDot{0%{box-shadow:0 0 0 0 #1ca66a55}70%{box-shadow:0 0 0 7px #1ca66a00}100%{box-shadow:0 0 0 0 #1ca66a00}}
+@keyframes ipfPulse{0%,100%{box-shadow:0 12px 30px #0b8c4a44}50%{box-shadow:0 12px 30px #0b8c4a44,0 0 0 9px #20c66b00}}
+@keyframes ipfShine{0%,65%,100%{left:-40%}35%{left:120%}}
+@media(max-width:800px){:root{scroll-padding-top:72px}.panel:hover:after{transform:none}.links a:after{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
